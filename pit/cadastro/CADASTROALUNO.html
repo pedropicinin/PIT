@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem Desculpas</title>
+    <link rel="stylesheet" href="CADASTRO.css">
+</head>
+<body>
+    <div class="main-cadastro">
+        <div class="cadastro-left">
+            <img src="cadastro-img.svg" class="img" alt="">
+        </div>
+            <form action="">
+            <div class="cadastro-right">
+                <div class="card-login">
+                <div class="form-header">
+                    <div class="login-title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-btn">
+                        <button><a href="">Entrar</a></button>
+                    </div>
+                    <div class="login-btn">
+                        <button><a href="CADASTROPROFESSOR.html">Professor</a></button>
+                    </div>
+                </div>
+                    <div class="input">
+                        <div class="input-box">
+                            <label for="name">Nome</label>
+                            <input id="name" type="text" name="name" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="number">Telefone</label>
+                            <input id="number" type="tel" name="number" placeholder="(xx) xxxxx-xxxx" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})">
+                        </div>
+                        <div class="input-box">
+                            <label for="curso">Curso Desejado</label>
+                            <input id="curso" type="text" name="curso" placeholder="Digite o curso que deseja">
+                        </div>
+                        <div class="input-box">
+                            <label for="instituicao">Instituição que Deseja</label>
+                            <input id="instituicao" type="text" name="curso" placeholder="Digite a instituição desejada">
+                        </div>
+                        <div class="input-box">
+                            <label for="password">Senha</label>
+                            <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="Confirmpassword">Confirme sua Senha</label>
+                            <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Confirme sua senha" required>
+                        </div>
+                        <div class="combo">
+                            <label for="">Matéria que tem dificuldade:</label>
+                        <select class="escolha">
+                            <option>Linguagens</option>
+                            <option>Matemática</option>
+                            <option>Ciências da Natureza</option>
+                            <option>Ciências Humanas</option>
+                        </select>
+                        </div>
+                        <div class="combo">
+                            <label for="">Matéria que deseja estudar:</label>
+                        <select class="escolha">
+                            <option>Linguagens</option>
+                            <option>Matemática</option>
+                            <option>Ciências da Natureza</option>
+                            <option>Ciências Humanas</option>
+                        </select>
+                        </div>
+                        <button class="btn-login">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+    </div>
+    
+</body>
+</html>

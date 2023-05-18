@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+    padding: 0 ;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', Courier, sans-serif;
+}
+
+.main-cadastro{
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro-left{
+    width: 30vw;
+    height: 100vh;
+    background: #407BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img{
+    width: 25vw;
+}
+
+.cadastro-right{
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: rgb(240, 240, 240);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(250, 235, 215, 0.89);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-header{
+    width: 70%;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-header h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #407BFF;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.login-btn{
+    display: flex;
+    align-items: center;
+}
+
+.login-btn button{
+    border: none;
+    background-color: #407BFF;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn button:hover{
+    background-color: white;
+}
+
+.login-btn button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+.input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    transition: .5s;
+}
+
+.input-box > input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box > label{
+    margin-bottom: 10px;
+}
+
+.escolha {
+    width: 39%;
+    padding: 10px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 400;
+    font-size: 0.8vw;
+    cursor: pointer;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    cursor: pointer;
+    color: black;
+    background: white;
+}
+
+.btn-login:hover{
+    color: white;
+    background: #407BFF;
+}
