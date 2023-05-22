@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sem Desculpas</title>
+    <title>Professor | Sem Desculpas</title>
     <link rel="stylesheet" href="CADASTRO.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="cadastro-left">
             <img src="cadastro-img.svg" class="img" alt="">
         </div>
-            <form action="">
+            <form action="cadastroprofessor.php" method="POST">
             <div class="cadastro-right">
                 <div class="card-login">
                 <div class="form-header">
@@ -20,7 +20,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-btn">
-                        <button><a href="">Entrar</a></button>
+                        <button><a href="C:\wamp64\www\teste\git_test\PIT\pit\login\LOGIN.html">Entrar</a></button>
                     </div>
                     <div class="login-btn">
                         <button><a href="CADASTROALUNO.html">Aluno</a></button>
@@ -53,19 +53,22 @@
                         </div>
                         <div class="materia">
                             <label for="">Matéria que deseja ensinar:</label>
-                        <select class="escolha">
-                            <option>Linguagens</option>
-                            <option>Matemática</option>
-                            <option>Ciências da Natureza</option>
-                            <option>Ciências Humanas</option>
+                        <select class="escolha" name="materia_lecionar">
+                            <option value="Linguagens">Linguagens</option>
+                            <option value="Matemática">Matemática</option>
+                            <option value="Ciências da Natureza">Ciências da Natureza</option>
+                            <option value="Ciências Humanas">Ciências Humanas</option>
                         </select>
                         </div>
-                        <button class="btn-login">Cadastrar</button>
+                        <input type="submit" class="btn-login" value="Cadastrar">
                     </div>
                 </div>
             </div>
             </form>
     </div>
     
+
+
+
 </body>
 </html>
