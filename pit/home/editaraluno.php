@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar | Sem Desculpas</title>
+    <title> Editar | Sem Desculpas</title>
     <link rel="stylesheet" href="../cadastro/CADASTRO.css">
 </head>
 <body>
@@ -32,8 +32,8 @@
                 $Senha = $row["senha"] ;
                 $Curso_Desejado = $row["curso_desejado"] ;
                 $Instituição_Desejada =$row["instituicao_desejada"]  ;
-               $Matérias_Estudar = $row["materias_estudar"];
-                $Matérias_Dificuldade = $row["materias_dificuldade"];
+               $Materias_Estudar = $row["materias_estudar"];
+                $Materias_Dificuldade = $row["materias_dificuldade"];
                 $Horas_Estudadas = $row["horas_estudadas"];
                 $Notificações = ($row["notificacoes"] ? "Sim" : "Não");
             }
@@ -50,19 +50,14 @@
         <div class="cadastro-left">
             <img src="../cadastro/cadastro-img.svg" class="img" alt="">
         </div>
-        <form action="scripteditaraluno.php" method="POST">
+        <form action="editar_aluno.php" method="POST">
             <div class="cadastro-right">
                 <div class="card-login">
                     <div class="form-header">
                         <div class="login-title">
-                            <h1>Cadastre-se</h1>
+                            <h1> Deseja editar algum dado? </h1>
                         </div>
-                        <div class="login-btn">
-                            <button><a href="">Entrar</a></button>
-                        </div>
-                        <div class="login-btn">
-                            <button><a href="CADASTROPROFESSOR.html">Professor</a></button>
-                        </div>
+                    
                     </div>
                     <div class="input">
                         <div class="input-box">
@@ -94,16 +89,16 @@
                         <div class="input-box">
                             <label for="password">Senha</label>
                             <input id="password" type="password" name="password" placeholder="Digite sua senha"
-                                required value="<?= $Senha; ?>">
+                                required value="<?= $Senha; ?>" disabled required>
                         </div>
                         <div class="input-box">
                             <label for="Confirmpassword">Confirme sua Senha</label>
                             <input id="Confirmpassword" type="password" name="Confirmpassword"
-                                placeholder="Confirme sua senha" required value="<?= $Senha; ?>">
+                                placeholder="Confirme sua senha" required value="<?= $Senha; ?>"  disabled required>
                         </div>
                         <div class="combo">
                             <label for="">Matéria que tem dificuldade:</label>
-                            <select class="escolha" name="dificuldade" value="<?= $Matérias_Dificuldade; ?>">
+                            <select class="escolha" name="dificuldade" value="<?= $Materias_Dificuldade; ?>">
                                 <option value="Linguagens">Linguagens</option>
                                 <option value="Matemática">Matemática</option>
                                 <option value="Ciências da Natureza">Ciências da Natureza</option>
@@ -112,7 +107,7 @@
                         </div>
                         <div class="combo">
                             <label for="">Matéria que deseja estudar:</label>
-                            <select class="escolha" name="MEstudar" value="<?= $Matérias_Estudar; ?>">
+                            <select class="escolha" name="MEstudar" value="<?= $Materias_Estudar; ?>">
                                 <option value="Linguagens">Linguagens</option>
                                 <option value="Matemática">Matemática</option>
                                 <option value="Ciências da Natureza">Ciências da Natureza</option>
@@ -140,13 +135,13 @@
                           </div>';
                         }else{
                             echo '<div class="form-check">
-                            <input class="form-check-input" type="radio" name="notificacao" id="notificacao" value="true">
+                            <input class="form-check-input" type="radio" name="notificacao" id="notificacao" value="false">
                             <label class="form-check-label" for="notificacao">
                               Sim, eu desejo receber notificação.
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="notificacao" id="notificacao" value="false" checked>
+                            <input class="form-check-input" type="radio" name="notificacao" id="notificacao" value="true" checked>
                             <label class="form-check-label" for="notificacao">
                               Não, eu não desejo receber notificação.
                             </label>

@@ -10,19 +10,34 @@ $escolha = $_POST['escolha'];
 if ($escolha == "Aluno")
 {
      // Consulta SQL para verificar as informações de login
-     $sql = "SELECT * FROM aluno WHERE email = '$email' AND senha = $senha";
-     $resultado = mysqli_query($conexao, $sql);
+     
+
+     $sql = "SELECT * FROM aluno WHERE email = '$email'";   
+       $resultado = mysqli_query($conexao, $sql);
+
  
      // Verifica se há um registro correspondente no banco de dados
      if (mysqli_num_rows($resultado) == 1) {
+
          // Login bem-sucedido
-         echo "<script> alert('Login realizado com sucesso!');    </script>";
+        
         while($row = $resultado->fetch_assoc()) {
             $idUsuario = $row["id_aluno"];
+            $senhaBD = $row["senha"];
+            if (password_verify($senha, $senhaBD))
+            {
+                session_start();
+                $_SESSION['usuario'] = $idUsuario;
+        
+                echo "<script> alert('Login realizado com sucesso!');    </script>";
+                header('Location: ../home/editaraluno.php?id_aluno='.$idUsuario);
+            }
+            else {
+                echo "<script> alert('Email ou senha incorretos.');    </script>";
+            }
+            
           }
-        session_start();
-        $_SESSION['usuario'] = $idUsuario;
-        header('Location: ../home/editaraluno.php?id_aluno='.$idUsuario);
+    
      } else {
          // Login inválido
          echo "<script> alert('Email ou senha incorretos.');    </script>";
@@ -35,25 +50,36 @@ if ($escolha == "Aluno")
 if ($escolha == "Professor")
 {
     // Consulta SQL para verificar as informações de login
-    $sql = "SELECT * FROM professor WHERE email = '$email' AND senha = $senha";
+   
+    $sql = "SELECT * FROM professor WHERE email = '$email'";    
     $resultado = mysqli_query($conexao, $sql);
 
     // Verifica se há um registro correspondente no banco de dados
     if (mysqli_num_rows($resultado) == 1) {
         // Login bem-sucedido
-        echo "<script> alert('Login realizado com sucesso!');    </script>";
         while($row = $resultado->fetch_assoc()) {
             $idUsuario = $row["id_professor"];
+            $senhaBD = $row["senha"];
+            if (password_verify($senha, $senhaBD))
+            {
+                session_start();
+                $_SESSION['usuario'] = $idUsuario;
+        
+                echo "<script> alert('Login realizado com sucesso!');    </script>";
+                header('Location: ../home/editarprofessor.php?id_aluno='.$idUsuario);
+            }
+            else {
+                echo "<script> alert('Email ou senha incorretos.');    </script>";
+            }
+            
           }
-        session_start();
-        $_SESSION['usuario'] = $idUsuario;
-        header('Location: editarprofessor.php?id_professor='.$idUsuario);
-    } else {
-        // Login inválido
-        echo "<script> alert('Email ou senha incorretos.');    </script>";
+    
+     } else {
+         // Login inválido
+         echo "<script> alert('Email ou senha incorretos.');    </script>";
+     }
+     // Fechando a conexão com o banco de dados
+     mysqli_close($conexao);
     }
-    // Fechando a conexão com o banco de dados
-    mysqli_close($conexao);
-}
 
 ?>
