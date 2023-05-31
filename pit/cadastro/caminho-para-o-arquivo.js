@@ -18,24 +18,21 @@ phoneInput.addEventListener('input', function () {
 });
 
 // Validação e máscara para senha (6 caracteres, letras maiúsculas, minúsculas e números)
-const form = document.querySelector('form');
-        const passwordInput = document.querySelector('input[name="password"]');
-        const confirmInput = document.querySelector('input[name="Confirmpassword"]');
+const passwordInput = document.querySelector('input[name="password"]');
+passwordInput.addEventListener('input', function () {
+  let value = this.value;
+  const regexUpperCase = /[A-Z]/;
+  const regexLowerCase = /[a-z]/;
+  const regexNumber = /[0-9]/;
+  
+  if (value.length > 6) {
+    this.value = value.substring(0, 6);
+  }
+  
+  if (!regexUpperCase.test(value) || !regexLowerCase.test(value) || !regexNumber.test(value)) {
+    alert("A senha deve conter pelo menos 1 letra maiúscula, 1 letra minúscula e 1 número.");
+  }
+});
 
-        form.addEventListener('submit', function(event) {
-            const password = passwordInput.value;
-            const confirm = confirmInput.value;
 
-            if (!isValidPassword(password)) {
-                event.preventDefault();
-                windows.alert('A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula e um número.');
-            } else if (password !== confirm) {
-                event.preventDefault();
-                windows.alert('As senhas não coincidem.');
-            }
-        });
 
-        function isValidPassword(password) {
-            const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-            return regex.test(password);
-        }
