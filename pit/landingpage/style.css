@@ -1,0 +1,299 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+
+body {
+
+    background: #004FFF;
+    margin: 0;
+    font-family: 'SF Pro Display', sans-serif;
+    color: #FFF;
+
+}
+
+.logo img {
+
+    padding: 30px;
+}
+
+.cabeca {
+    display: flex;
+    flex-direction: row;
+}
+
+.circle-purple
+{
+    padding-left: 15rem;
+    padding-top: -4.3rem;
+    
+}
+
+.botoes {
+    display: flex;
+    padding-top: 2.13rem;
+
+}
+
+.botoes a {
+    color: #FFF;
+    font-family: 'SF Pro Display';
+    text-decoration: none;
+    color: #FFF;
+    font-family: 'SF Pro Display';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.login {
+    padding-left: 10.8rem;
+    padding-right: 20px;
+
+}
+
+.login button {
+    width: 11.9915rem;
+    height: 2.875rem;
+    flex-shrink: 0;
+    border-radius: 3.125rem;
+border: 1px solid #FFF;
+background: rgba(217, 217, 217, 0.00);
+}
+
+.cad button {
+    width: 11.9915rem;
+    height: 2.875rem;
+    flex-shrink: 0;
+    border-radius: 3.125rem;
+border: 1px solid #FFF;
+background: rgba(217, 217, 217, 0.00);
+}
+
+#verde {
+    transform: rotate(-32.79deg);
+    color: #B3FF53;
+font-family: 'Poppins';
+font-size: 12.5rem;
+font-style: normal;
+font-weight: 275;
+line-height: normal;
+position: absolute;
+top: 110px;
+padding-left: 6rem;
+}
+
+#circle-green {
+
+
+padding-left: 81.9rem;
+padding-right: 0rem;
+position: absolute;
+right: 0;
+
+margin: 0;
+}
+
+#circle-red {
+    padding-top: 15.6rem;
+}
+
+.chamada {
+   padding-left: 30rem; 
+   position: absolute;
+   top: 150px;
+}
+
+#primeiro {
+    color: #FFF;
+    font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: 25px;
+}
+
+#segundo {
+    color: #FFC700;
+font-family: 'SF Pro Display';
+font-size: 5rem;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: -110px;    
+margin-top: -40px;
+}
+
+#terceiro {
+    color: #FFF;
+text-align: center;
+font-family: 'SF Pro Display';
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: -150px;    
+margin-top: -20px;
+}
+
+#circle-yellow {
+    padding-top: 15.6rem;
+    padding-left: 2rem;
+}
+
+#circle-pink {
+    padding-left: 81.9rem;
+    padding-right: 2rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    padding-left: 12.9rem;
+    margin-top: -200px;
+    padding-bottom: 50px;
+    gap: 80px;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.25rem;
+background: #688DDF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+width: 17.25rem;
+height: 14.6875rem;
+flex-shrink: 0;
+}
+
+.card1 svg {
+
+    padding-left: 110px;
+    padding-top: 30px;
+}
+
+.card1 p {
+    color: #FFF;
+    text-align: center;
+    padding-top: -80px;
+    width: 15.3125rem;
+    color: #FFF;
+text-align: center;
+font-family: 'SF Pro Display';
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+padding-left: 15px;
+}
+
+.card1 a {
+    text-decoration: none;
+
+}
+
+li a {
+    text-decoration: none;
+    color: #FFF;
+font-family: 'SF Pro Display';
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.dropdown {
+padding-top: 58px;
+}
+li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 380px;
+    top: 50px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    z-index: 1;
+    border-radius: 30px 30px 30px 30px;
+  }
+  
+  .dropdown-content a {
+    color: #FFC700 ;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;
+    border-radius: 30px 30px 30px 30px ;
+}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+.oque {
+
+    padding-left: 14rem;
+margin-top: -300px;
+color: #FFF;
+font-family:   'SF Pro Display';
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-align: left;
+}
+
+#sem-yellow {
+    color:#FFC700;
+    margin-top:  -50px;
+}
+
+.texto-quem {
+    text-align: right;
+    padding-right: 80px;
+    font-size: 2rem;
+    font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+
+.cards2 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 12.9rem;
+    padding-bottom: 50px;
+    gap: 80px;
+    margin-top: -300px;
+}
+
+.equipe {
+    padding-right: 5rem;
+    margin-top: -300px;
+    color: #FFF;
+    font-family:   'SF Pro Display';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: right;
+
+}
+
+.texto-quem2 
+{
+    text-align: left;
+    padding-left: 80px;
+    font-size: 2rem;
+    font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-top: 10px;
+width: 50.6875rem;}
