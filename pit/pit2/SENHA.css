@@ -192,3 +192,22 @@ ul li.item-menu a .icon > i{
     box-shadow: 0px 10px 40px -12px ;
     padding: 20px;
 }
+
+.voltar {
+    display: flex;
+    position: absolute;
+    top: 500px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #407BFF;
+    width: 80px;
+    justify-content: center;
+    cursor: pointer;
+    left: 780px;
+
+}
+
+.voltar a {
+    text-decoration: none;
+    color: white;
+}

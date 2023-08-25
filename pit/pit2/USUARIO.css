@@ -170,6 +170,12 @@ ul li.item-menu a .icon > i{
     top: 120px;
 }
 
+.dados  a {
+    text-decoration: none;
+    color: #407BFF;
+
+}
+
 .grafico{
     display: flex;
     justify-content: center;
