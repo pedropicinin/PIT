@@ -88,21 +88,21 @@
             <a href="USUARIO.html"> voltar </a>
         </button>
 
-        <form>
+        <form action="editar_senha.php" method="post">
             <div class="login-right">
                 <div class="card-login">
                     <h1>Alteração da senha</h1>
                     <div class="login">
                         <label for="usuario">Senha antiga:</label>
-                        <input type="password" name="senha"  required>
+                        <input type="password" name="senhaAntiga"  required>
                     </div>   
                     <div class="login">
                         <label for="senha">Nova senha:</label>
-                        <input type="password" name="senha"  required>
+                        <input type="password" name="senhaNova"  required>
                     </div>
                     <div class="login">
                         <label>Confirme a senha:</label>
-                        <input type="password" name="senha"  required>
+                        <input type="password" name="confirmeSenha"  required>
                     </div>
                     <button class="btn-login">Alterar</button>
                 </div>

@@ -30,7 +30,7 @@ if ($escolha == "Aluno")
                 $_SESSION['usuario'] = $idUsuario;
         
                 echo "<script> alert('Login realizado com sucesso!');    </script>";
-                header('Location: ../home/editaraluno.php?id_aluno='.$idUsuario);
+                header('Location: ../pit2/INICIAL.html?id_aluno='.$idUsuario);
             }
             else {
                 echo "<script> alert('Email ou senha incorretos.');    </script>";
@@ -66,7 +66,7 @@ if ($escolha == "Professor")
                 $_SESSION['usuario'] = $idUsuario;
         
                 echo "<script> alert('Login realizado com sucesso!');    </script>";
-                header('Location: ../home/editarprofessor.php?id_aluno='.$idUsuario);
+                header('Location: ../professor_dash/INCIAL_PROFESSOR.html?id_aluno='.$idUsuario);
             }
             else {
                 echo "<script> alert('Email ou senha incorretos.');    </script>";

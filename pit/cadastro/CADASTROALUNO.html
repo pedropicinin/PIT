@@ -14,7 +14,7 @@
         <div class="cadastro-left">
             <img src="cadastro-img.svg" class="img" alt="">
         </div>
-        <form action="cadastroaluno.php" method="POST">
+        <form action="cadastroaluno.php" method="POST" id="form1">
             <div class="cadastro-right">
                 <div class="card-login">
                     <div class="form-header">
@@ -35,7 +35,8 @@
                         </div>
                         <div class="input-box">
                             <label for="email">Email</label>
-                            <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                            <input id="email" type="email" name="email" placeholder="Digite seu email" pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b
+                            " required>
                         </div>
                         <div class="input-box">
                             <label for="number">Telefone</label>
@@ -58,7 +59,7 @@
                         <div class="input-box">
                             <label for="password">Senha</label>
                             <input id="password" type="password" name="password" placeholder="Digite sua senha"
-                                required>
+                                required  onchange="Verifica()">
                         </div>
                         <div class="input-box">
                             <label for="Confirmpassword">Confirme sua Senha</label>
@@ -101,7 +102,7 @@
                             </label>
                           </div>
                           
-                        <input type="submit" class="btn-login" value="Cadastrar">
+                        <button type="submit" class="btn-login" id="btnCad"> CADASTRAR </button>
                     </div>
                 </div>
             </div>

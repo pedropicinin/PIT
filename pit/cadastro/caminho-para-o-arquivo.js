@@ -1,6 +1,12 @@
+const btnCad = document.getElementById("btnCad");
+btnCad.disabled = true;
+
+btnCad.style.backgroundColor = "red";
+
+
 // Máscara para CPF (xxx.xxx.xxx-xx)
 const cpfInput = document.querySelector('input[name="cpf"]');
-cpfInput.addEventListener('input', function () {
+cpfInput.addEventListener('blur', function () {
   let value = this.value.replace(/\D/g, '');
   value = value.replace(/^(\d{3})(\d)/g, '$1.$2');
   value = value.replace(/^(\d{3})\.(\d{3})(\d)/g, '$1.$2.$3');
@@ -10,29 +16,32 @@ cpfInput.addEventListener('input', function () {
 
 // Máscara para número de telefone ((xx) xxxxx-xxxx)
 const phoneInput = document.querySelector('input[name="number"]');
-phoneInput.addEventListener('input', function () {
+phoneInput.addEventListener('blur', function () {
   let value = this.value.replace(/\D/g, '');
   value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
   value = value.replace(/(\d)(\d{4})$/, '$1-$2');
   this.value = value.substring(0, 14);
 });
 
-// Validação e máscara para senha (6 caracteres, letras maiúsculas, minúsculas e números)
-const passwordInput = document.querySelector('input[name="password"]');
-passwordInput.addEventListener('input', function () {
-  let value = this.value;
-  const regexUpperCase = /[A-Z]/;
-  const regexLowerCase = /[a-z]/;
+
+function Verifica(){
+  const passwordInput = document.querySelector('input[name="password"]');
+let value = passwordInput.value;
+const regexUpperCase = /[A-Z]/;
+  const regexLowerCase = /[a.z]/;
   const regexNumber = /[0-9]/;
-  
-  if (value.length > 6) {
-    this.value = value.substring(0, 6);
+
+  console.log(value);
+  console.log(regexUpperCase.test(value));
+  console.log(regexLowerCase.test(value));
+  console.log(regexNumber.test(value));
+
+  if (regexUpperCase.test(value) || regexLowerCase.test(value) || regexNumber.test(value) && value.length > 6) {
+btnCad.disabled = false;
+btnCad.style.backgroundColor = "GREEN";
   }
-  
-  if (!regexUpperCase.test(value) || !regexLowerCase.test(value) || !regexNumber.test(value)) {
-    alert("A senha deve conter pelo menos 1 letra maiúscula, 1 letra minúscula e 1 número.");
-  }
-});
+}
+
 
 
 

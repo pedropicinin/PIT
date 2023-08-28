@@ -8,37 +8,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-    <?php
+<?php
     require("config.php");
     session_start();
     if (isset($_SESSION['usuario'])) {
-        $id_aluno = $_SESSION['usuario'];
+        $id_professor = $_SESSION['usuario'];
         if ($conexao->connect_error) {
             die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
         }
         
-        $sql = "SELECT * FROM aluno WHERE id_aluno = $id_aluno";
+        $sql = "SELECT * FROM professor WHERE id_professor = $id_professor";
         $resultado = $conexao->query($sql);
         
         
         if ($resultado->num_rows > 0) {
             // Exibe os atributos do aluno
             while ($row = $resultado->fetch_assoc()) {
-                $idAluno = $row["id_aluno"];
+                $idProfessor = $row["id_professor"];
                 $Nome = $row["nome"];
                 $CPF = $row["cpf"];
                 $Telefone = $row["telefone"] ;
                 $Email = $row["email"] ;
                 $Senha = $row["senha"] ;
-                $Curso_Desejado = $row["curso_desejado"] ;
-                $Instituição_Desejada =$row["instituicao_desejada"]  ;
-               $Materias_Estudar = $row["materias_estudar"];
-                $Materias_Dificuldade = $row["materias_dificuldade"];
-                $Horas_Estudadas = $row["horas_estudadas"];
-                $Notificações = ($row["notificacoes"] ? "Sim" : "Não");
+                $Materia_Lecionar = $row["materia_lecionar"] ;
+          
+                
             }
         } else {
-            echo "Nenhum aluno encontrado com o ID informado.";
+            echo "Nenhum professor encontrado com o ID informado.";
         }       
         $conexao->close();
     } else {
@@ -115,32 +112,26 @@
         <div class="home">
             <div class="usuario">
                 <i class="bi bi-person-circle"></i>
-                <h1>nome do usuario</h1>
-                <h5>professor ou aluno</h5>
+                <h1> <?php echo $Nome; ?> </h1>
+                <h5>professor</h5>
             </div>
             <div class="dados">
                 <h1>nome</h1>
-                <h5 value="<?= $Nome; ?>"></h5>
+                <h5> <?php echo $Nome; ?></h5>
                 <h1>cpf</h1>
-                <h5 value="<?= $CPF; ?>"></h5>
+                <h5> <?php echo $CPF; ?></h5>
                 <h1>email</h1>
                 <h6> <a href="EMAIL.html"> atualizar email </a></h6>
-                <h5 value="<?= $Email; ?>"></h5>
+                <h5> <?php echo $Email; ?></h5>
                 <h1>telefone</h1>
-                <h6> <a href="TELEFONE.html"> atualizar telefone </a></h6>
-                <h5 value="<?= $Telefone; ?>"></h5>
+                <h6> <a href="..TELEFONE.html"> atualizar telefone </a></h6>
+                <h5> <?php echo $Telefone; ?></h5>
                 <h1>senha</h1>
                 <h6> <a href="SENHA.html"> atualizar senha </a></h6>
 
-                <h5 value="<?= $Senha; ?>"></h5>
+                <h5> *******</h5>
             </div>
-            <div class="grafico">
-                <h1>horas estudadas</h1>
-                <h5>humanas</h5>  
-                <h5>redação</h5>
-                <h5>linguagens</h5>
-                <h5>exatas</h5>  
-            </div>
+           
             <div class="premium">
                 <h1>Venha para o premium</h1>
                 
