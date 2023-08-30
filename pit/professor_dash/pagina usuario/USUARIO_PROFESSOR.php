@@ -22,7 +22,7 @@
         
         
         if ($resultado->num_rows > 0) {
-            // Exibe os atributos do aluno
+            // Exibe os atributos do PROFESSOR
             while ($row = $resultado->fetch_assoc()) {
                 $idProfessor = $row["id_professor"];
                 $Nome = $row["nome"];

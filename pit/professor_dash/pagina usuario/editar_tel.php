@@ -8,12 +8,12 @@ $telAntigo = $_POST['telAntigo'];
 
    session_start();
     if (isset($_SESSION['usuario'])) {
-        $id_aluno = $_SESSION['usuario'];
+        $id_professor = $_SESSION['usuario'];
         if ($conexao->connect_error) {
             die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
         }
         
-        $sql = "SELECT * FROM aluno WHERE id_aluno = $id_aluno";
+        $sql = "SELECT * FROM professor WHERE id_professor = $id_professor";
         $resultado = $conexao->query($sql);
       }
 
@@ -24,20 +24,20 @@ if (mysqli_num_rows($resultado) == 1) {
   // Login bem-sucedido
  
  while($row = $resultado->fetch_assoc()) {
-     $idUsuario = $row["id_aluno"];
+     $idUsuario = $row["id_professor"];
      $telBD = $row["telefone"];
 
      if ($telAntigo == $telBD) 
      {
-        $id_aluno = $idUsuario;
+        $id_professor = $idUsuario;
         $telNovo = $_POST['telNovo'];
 
-        $sql = "UPDATE aluno SET telefone = '$telNovo'
-        WHERE id_aluno = $id_aluno";
+        $sql = "UPDATE professor SET telefone = '$telNovo'
+        WHERE id_professor = $id_professor";
 
          echo "<script> alert('Telefone alterado com sucesso!');    </script>";
 
-         header('Location: ../pit2/USUARIO_ALUNO.php?id_aluno='.$idUsuario);
+         header('Location: USUARIO_PROFESSOR.php?id_professor='.$idUsuario);
 
      
          
