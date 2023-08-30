@@ -241,7 +241,7 @@ padding: 10PX;
   }
 
 
-.materia textarea {
+.materia input {
     width: 29.6875rem;
     height: 22.1875rem;
     flex-shrink: 0;

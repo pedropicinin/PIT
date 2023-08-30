@@ -92,18 +92,18 @@
 
         <div class="container">
 
-        <form action="#">
+        <form action="CONTEUDO.php" method="post">
 
         
 
             <div class="cont2">  
                     <div class="titulo">
-                        <input type="text" name="" id="" value="Titulo" required> 
+                        <input type="text" name="titulo" id="" value="Titulo" required> 
                     </div>
                 
 
                     <div class="materia">
-                        <textarea name="texto" rows="5" cols="40" required> Escreva a matéria... </textarea>
+                        <input name="materia" value="Escreva a matéria..."  required> </input>
                     </div>
             </div>
 
@@ -112,7 +112,7 @@
                     <div class="combo-materia">
                       <label for=""> escolha a materia: </label>
                       <br>
-                      <select class="escolha" name="MEstudar" required>
+                      <select class="escolha" name="disciplina" required>
                           <option value="Linguagens">Linguagens</option>
                           <option value="Matemática">Matemática</option>
                           <option value="Ciências da Natureza">Ciências da Natureza</option>
@@ -124,7 +124,7 @@
                 <div class="anexos">
                 <p> anexar atividades de <br>
                     fixação em pdf:  </p>
-                    <input type="file" name="video" id="video">
+                    <input type="file" name="anexo" id="video">
                 </div>
                 <div class="postar">
                     <button type="submit"> postar </button>
