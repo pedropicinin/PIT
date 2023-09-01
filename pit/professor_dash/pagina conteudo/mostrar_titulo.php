@@ -3,12 +3,12 @@
 require("config.php");
 
 $disciplina = $_POST["disciplina"];
+echo "Disciplina selecionada: " . $disciplina;
 $disciplina = intval($disciplina);
 
 // Executa a consulta SQL
 $sql = "SELECT titulo FROM conteudos WHERE disciplina = $disciplina";
 $resultado = $conexao->query($sql);
-
 
 if ($resultado) {
     // A consulta retornou uma linha ou mais
@@ -30,6 +30,7 @@ if ($resultado) {
 }
 
 $conexao->close();
+
 
 
 
