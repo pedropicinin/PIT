@@ -311,4 +311,28 @@ margin-left: -50px;
   
   }
   
+  .concluido1 button {
+    width: 10.1875rem;
+    height: 2.375rem;
+
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: #83A9FF;
+  color: #000;
+  font-family: 'SF Pro Display';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+position: absolute;  
+left: 1100px;
+top: 140px  }
+
+  .concluido1 {
+    padding: 10px;
+  }
+  
+  .concluido1 a {
+text-decoration: none;  }
 

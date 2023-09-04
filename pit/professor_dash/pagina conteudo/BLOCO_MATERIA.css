@@ -215,25 +215,6 @@ gap: 80px;
   .cont2 {
 margin-top: -50px;  }
 
-.titulo {
-  padding-right: 110PX;
-}
-
-.titulo input {
-    width: 17.1875rem;
-    height: 2.375rem;
-  flex-shrink: 0;
-  border-radius: 1.25rem;
-  background: #83A9FF;
-  border: none;
-  color: #000;
-font-family: 'SF Pro Display';
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-padding: 10PX;
-
-}
 
 .materia {
     padding-top: 30px;
@@ -242,13 +223,12 @@ padding: 10PX;
 
 
 .materia input {
-    width: 29.6875rem;
-    height: 22.1875rem;
-    flex-shrink: 0;
-    border-radius: 1.25rem;
-    border: 0px solid #000;
-    background: #FFF;
-    box-shadow: 8px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 39.1875rem;
+height: 25.25rem;
+flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: #A4CAFE;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #000;
 font-family: 'SF Pro Display';
 font-size: 15px;
@@ -257,44 +237,21 @@ font-style: normal;
 font-weight: 700;
 padding-left: 20px;
 margin-left: -50px;
-  }
+margin-top: -50px;  }
 
 .cont3 {
 
   position: absolute;
-  left: 1000px;
+  left: 1100px;
   bottom: 190px;
 }
-
-
-  .combo-materia select {
-    width: 17.1875rem;
-    height: 2.375rem;
-  flex-shrink: 0;
-  border-radius: 1.25rem;
-  background: #83A9FF;
-  color: #000;
-  font-family: 'SF Pro Display';
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
-  border: none;
-  }
-  
-  .escolha option {
-    margin-bottom: 50px;
-  }
 
   .anexos {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-
-
-  .postar button {
+  .baixar {
     width: 10.1875rem;
     height: 2.375rem;
 
@@ -308,7 +265,59 @@ margin-left: -50px;
   font-weight: 500;
   line-height: normal;
   border: none;
+  margin-top: 10px;
+  padding: 10px;
+  }
+
+  .baixar a {
+    text-decoration: none;
+}
+
+
+  .concluido button {
+    width: 10.1875rem;
+    height: 2.375rem;
+
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: #83A9FF;
+  color: #000;
+  font-family: 'SF Pro Display';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+  margin-left: -7px;
   
   }
+
+  .concluido {
+    padding: 10px;
+  }
   
+  .concluido1 button {
+    width: 10.1875rem;
+    height: 2.375rem;
+
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  background: #83A9FF;
+  color: #000;
+  font-family: 'SF Pro Display';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none;
+position: absolute;  
+left: 1100px;
+top: 140px  }
+
+  .concluido1 {
+    padding: 10px;
+  }
+  
+  .concluido1 a {
+text-decoration: none;  }
 

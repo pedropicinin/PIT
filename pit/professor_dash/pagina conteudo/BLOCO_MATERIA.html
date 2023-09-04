@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Conteudos </title>
-    <link rel="stylesheet" href="CONTEUDO.css">
+    <title>  Materia </title>
+    <link rel="stylesheet" href="BLOCO_MATERIA.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
@@ -87,47 +87,44 @@
                 <path d="M26.1765 28.5293L63.8235 28.5293M26.1765 44.9999H49.7059M18.4118 66.1764H85V82.6469C85 91.7293 77.6118 99.1175 68.5294 99.1175H21.4706C12.3882 99.1175 5 91.7293 5 82.6469V79.5881C5 72.1999 11.0235 66.1764 18.4118 66.1764Z" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M5 80.2941L5 28.5294C5 9.70588 9.70588 5 28.5294 5L61.4706 5C80.2941 5 85 9.70588 85 28.5294V75.5882C85 76.247 85 76.9059 84.9529 77.5647" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>         
-          <h1> Adicionar conteúdo </h1>
+          <h1> Titulo </h1>
         </div>
 
-        <div class="container">
+        <div class="concluido1"> 
+            <button type="submit"> <a href="CONTEUDO_PRINCIPAL.html"> voltar </a> </button>
+        </div>
+        
 
-        <form action="CONTEUDO.php" method="post" enctype="multipart/form-data">
+        <div class="container">
+          
+
+        <form action="" method="post">
 
         
 
             <div class="cont2">  
-                    <div class="titulo">
-                        <input type="text" name="titulo" id="" value="Titulo" required> 
-                    </div>
-                
-
                     <div class="materia">
-                        <input name="materia" value="Escreva a matéria..."  required> </input>
+                        <input name="materia" value="matéria..."  disabled> </input>
                     </div>
+
             </div>
 
             <div class="cont3"> 
-                <div class="escolha-materia">
-                    <div class="combo-materia">
-                      <label for=""> escolha a materia: </label>
-                      <br>
-                      <select class="escolha" name="disciplina" required>
-                          <option value="Linguagens">Linguagens</option>
-                          <option value="Matemática">Matemática</option>
-                          <option value="Ciências da Natureza">Ciências da Natureza</option>
-                          <option value="Ciências Humanas">Ciências Humanas</option>
-                      </select>
-                  </div>
-                </div>
+                
     
                 <div class="anexos">
-                <p> anexar atividades de <br>
-                    fixação em pdf:  </p>
-                    <input type="file" name="anexo" id="video" required>
+                <p> atividades <br>
+                    de fixação: </p>
+                    <div class="baixar">
+                        <a href="caminho/do/arquivo/arquivo.zip" download="nome-do-arquivo.zip"> 
+                        baixar
+                        </a>
+                    </div>
                 </div>
-                <div class="postar">
-                    <button type="submit"> postar </button>
+                
+                <div class="concluido">
+                
+                    <button type="submit"> concluir </button>
                 </div>
 
             </div>
