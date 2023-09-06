@@ -1,0 +1,238 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+nav.menu-lateral{
+    width: 20vw;
+    height: 100%;
+    padding: 40px 0 40px 1%;
+    background-color: white;
+    box-shadow: 3px 0 0 #407BFF;
+
+   
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .5s;
+}
+
+ul li.item-menu:hover{
+    background-color: #407BFF ;
+}
+
+ul li.item-menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 40px;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+.menu-principal{
+    width: 80vw;
+    height: 100vh;
+
+}
+
+.header {
+    height: 10vh;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.header .lupa-buscar, .header .btn-fechar{
+    min-width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header .lupa-buscar i{
+    font-size: 25px;
+}
+
+.lupa-buscar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.input-buscar{
+    position: absolute;
+    left: 60px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 80px;
+}
+
+.input-buscar input{
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+}
+
+.btn-fechar{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 80px;
+    font-size: 15px;
+}
+
+.home{
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.usuario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    position: absolute;
+    height: 10vh;
+    top: 1px;
+    left: 50px;
+}
+
+.usuario > i{
+    padding: 20px;
+    font-size: 70px;
+}
+
+.usuario > h1{
+    display: flex
+}
+
+
+.usuario > h5{
+    position: absolute;
+    padding: 60px 50px 0px 110px;
+}
+
+.dados{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top: 120px;
+}
+
+.dados  a {
+    text-decoration: none;
+    color: #407BFF;
+
+}
+
+.grafico{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 120px;
+    padding: 30px 200px 30px 30px;
+    background-color: #407BFF;
+    border-radius: 50px;
+    box-shadow: 0px 10px 40px #00000056;
+    color: white;
+}
+
+.grafico > h5{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.premium{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 500px;
+    padding: 50px 50px;
+    background-color: #FFC700;
+    border-radius: 50px;
+    box-shadow: 0px 10px 40px #00000056;
+    left: 530px;
+}
+
+.premium > h1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0 0 50px 0 ;
+}
+
+.premium > button{
+    width: 100%;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: black;
+    background: white;
+    cursor: pointer;
+    
+}

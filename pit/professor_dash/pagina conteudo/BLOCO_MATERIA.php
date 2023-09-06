@@ -8,6 +8,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
+
+<?php
+
+require("config.php");
+
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM conteudos WHERE id = '$id'";
+
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    $linha = mysqli_fetch_assoc($resultado);
+
+     $titulo = $linha["titulo"];
+     $materia = $linha["materia"];
+     $arquivo = $linha["anexo"];
+
+     $targetDir = "uploads/";
+     $targetFile = realpath(__DIR__ . '/uploads/' . $arquivo);
+
+if (file_exists($targetFile)) {
+        // Read the file contents
+        $fileContents = file_get_contents($targetFile);
+     } else {
+        // File does not exist
+        $fileContents = "";
+     }
+
+     
+
+
+} else {
+    echo "Nenhum conteúdo encontrado para o ID " . $id;
+}
+
+mysqli_close($conexao);
+?>
+
+
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -81,7 +121,8 @@
                 <path d="M26.1765 28.5293L63.8235 28.5293M26.1765 44.9999H49.7059M18.4118 66.1764H85V82.6469C85 91.7293 77.6118 99.1175 68.5294 99.1175H21.4706C12.3882 99.1175 5 91.7293 5 82.6469V79.5881C5 72.1999 11.0235 66.1764 18.4118 66.1764Z" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M5 80.2941L5 28.5294C5 9.70588 9.70588 5 28.5294 5L61.4706 5C80.2941 5 85 9.70588 85 28.5294V75.5882C85 76.247 85 76.9059 84.9529 77.5647" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>         
-          <h1> Titulo </h1>
+              
+          <h1> <?php echo $titulo; ?> </h1>
         </div>
 
         <div class="concluido1"> 
@@ -93,12 +134,11 @@
           
 
         <form action="" method="post">
-
         
 
             <div class="cont2">  
                     <div class="materia">
-                        <input name="materia" value="matéria..."  disabled> </input>
+                        <input name="materia" value="<?php echo $materia; ?>" disabled> </input>
                     </div>
 
             </div>
@@ -110,17 +150,15 @@
                 <p> atividades <br>
                     de fixação: </p>
                     <div class="baixar">
-                        <a href="caminho/do/arquivo/arquivo.zip" download="nome-do-arquivo.zip"> 
-                        baixar
-                        </a>
+                        <?php if (file_exists($fileContents)) {
+                            echo "<a href='download.php?id=$id' download='$fileContents'>Baixar</a>";
+                            }
+                        ?>
+                   
+                    </a>
                     </div>
                 </div>
                 
-                <div class="concluido">
-                
-                    <button type="submit"> concluir </button>
-                </div>
-
             </div>
            
 

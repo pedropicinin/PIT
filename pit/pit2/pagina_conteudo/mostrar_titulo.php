@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -78,10 +77,6 @@
 
     </div>
 
-    <div class="btn-add">
-        <button> <a href="CONTEUDO.html"> adicionar conteudo </a> </button>
-    </div>
-
         <div class="config">
             <svg xmlns="http://www.w3.org/2000/svg" width="90" height="104" viewBox="0 0 90 104" fill="none">
                 <path d="M26.1765 28.5293L63.8235 28.5293M26.1765 44.9999H49.7059M18.4118 66.1764H85V82.6469C85 91.7293 77.6118 99.1175 68.5294 99.1175H21.4706C12.3882 99.1175 5 91.7293 5 82.6469V79.5881C5 72.1999 11.0235 66.1764 18.4118 66.1764Z" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,50 +88,46 @@
 
     <div class="container">
             
-        <form action="mostrar_titulo.php" method="post"> 
+        <form action="BLOCO_MATERIA.php" method="get"> 
             
-        <div class="cont3"> 
-            <div class="escolha-materia">
-                <div class="combo-materia">
-                  <label for=""> escolha a materia: </label>
-                  <br>
-                  <select name="disciplina" id="disciplina">
-                    <option value="Linguagens">Linguagens</option>
-                    <option value="Matemática">Matemática</option>
-                    <option value="Ciências da Natureza">Ciências da Natureza</option>
-                    <option value="Ciências Humanas">Ciências Humanas</option>
-                  </select>
-              </div>
-            </div>
-        </div>
+        
+        <?php
 
-        <div class="conteudos-grid">
-            <div> 
-                <h5> </h5>
-             
-            </div>
+require("config.php");
 
-            <div>
-                <h5>  </h5>
-            </div>
+$disciplina = $_POST["disciplina"];
 
-            <div> 
-                <h5>  </h5>
+$sql = "SELECT * FROM conteudos WHERE disciplina = '$disciplina'";
 
-            </div>
+$resultado = mysqli_query($conexao, $sql);
 
-            <div>
-                <h5>  </h5>
+if (mysqli_num_rows($resultado) > 0) {
+    echo "<div class=\"conteudos-grid\">";
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $titulo = $linha["titulo"];
+        $id = $linha["id"];
 
-            </div>
+        echo "<div >";
+        echo "<h5>" . $titulo . "</h5>";
+        echo "<a href=\"BLOCO_MATERIA.php?id=" . $id . "\" target=\"_blank\">Ver detalhes</a>";
+        
+        
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "Nenhum conteúdo encontrado para a disciplina " . $disciplina;
+}
+
+mysqli_close($conexao);
+?>
 
 
-        </div>
 
 
-        <div class="btn-ver">
-            <button type="submit"> ver </button>
-        </div>
+
+
+        
     
     </form>
 </div>

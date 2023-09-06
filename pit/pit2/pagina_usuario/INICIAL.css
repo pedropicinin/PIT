@@ -1,0 +1,348 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.perfil .circlewhite {
+
+    border-radius: 50%;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    position: absolute;
+    left: 1380px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    top: 40px;
+
+}
+
+.perfil a {
+    color: black}
+.perfil h4 {
+
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    left: 1375px;
+    padding-right: 50px;
+
+}
+
+
+
+nav.menu-lateral{
+    width: 20vw;
+    height: 100%;
+    padding: 40px 0 40px 1%;
+    background-color: white;
+    box-shadow: 3px 0 0 #407BFF;
+
+   
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .5s;
+}
+
+ul li.item-menu:hover{
+    background-color: #407BFF ;
+}
+
+ul li.item-menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 40px;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+}
+
+.menu-principal{
+    width: 80vw;
+    height: 100vh;
+
+}
+
+.header {
+    height: 10vh;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.header .lupa-buscar, .header .btn-fechar{
+    min-width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header .lupa-buscar i{
+    font-size: 25px;
+}
+
+.lupa-buscar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.input-buscar{
+    position: absolute;
+    left: 60px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    line-height: 80px;
+}
+
+.input-buscar input{
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+}
+
+.btn-fechar{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    line-height: 80px;
+    font-size: 15px;
+}
+
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+    top: 100px;
+    padding: 100px 10px 50px 50px;
+    background-color: #407BFF;
+    border-radius: 50px;
+    box-shadow: 0px 10px 40px #00000056;
+    color: white;
+    position: absolute;
+    left: 500px;
+}
+
+.banner > h1{
+    font-size: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.banner > button{
+    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color:#407BFF;
+    background: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+}
+
+.espacos1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    text-align: left;
+    top: 300px;
+    left: 500px;
+}
+
+.espacos1 > i{
+    font-size: 30px;
+}
+
+.espacos1 > h5{
+    font-size: 20px;
+    padding: 15px;
+}
+
+.espacos1 > button{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border-color: #FFC700;
+    cursor: pointer;
+}
+
+.espacos2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    text-align: left;
+    top: 300px;
+    left: 850px;
+}
+
+.espacos2 > i{
+    font-size: 30px;
+}
+
+.espacos2 > h5{
+    font-size: 20px;
+    padding: 15px;
+}
+
+.espacos2 > button{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border-color: #FF0000;
+    cursor: pointer;
+}
+
+.espacos3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    text-align: left;
+    top: 300px;
+    left: 1200px;
+}
+
+.espacos3 > i{
+    font-size: 30px;
+}
+
+.espacos3 > h5{
+    font-size: 20px;
+    padding: 15px;
+}
+
+.espacos3 > button{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border-color: #B3FF53;
+    cursor: pointer;
+}
+
+.tema{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    text-align: left;
+    top: 500px;
+    left: 500px;
+    box-shadow: 5px 5px #DBE2FD;
+}
+
+.tema > i{
+    font-size: 40px;
+}
+
+.tema > h3{
+    padding: 15px;
+}
+
+.tema > button{
+    display: flex;
+    position: absolute;
+    top: 150px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border-color: black;
+    background-color: #407BFF;
+    width: 80%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cronograma{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    text-align: left;
+    top: 500px;
+    left: 1200px;
+    box-shadow: 5px 5px #DBE2FD;
+}
+
+.cronograma > i{
+    font-size: 40px;
+    padding: 15px;
+}

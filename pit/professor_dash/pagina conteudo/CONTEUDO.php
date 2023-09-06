@@ -11,7 +11,8 @@ $anexo = $_FILES["anexo"]["name"];
 $targetDir = "uploads/";
 $targetFile = $targetDir . basename($_FILES["anexo"]["name"]);
 
-if (move_uploaded_file($_FILES["anexo"]["tmp_name"], $targetFile)) {
+if (is_uploaded_file($_FILES["anexo"]["tmp_name"]) && $_FILES["anexo"]["type"] == "application/pdf") {
+    move_uploaded_file($_FILES["anexo"]["tmp_name"], $targetFile);
     $sql = "INSERT INTO conteudos (titulo, materia, disciplina, anexo)
             VALUES ('$titulo', '$materia', '$disciplina', '$anexo')";
 
@@ -25,7 +26,7 @@ if (move_uploaded_file($_FILES["anexo"]["tmp_name"], $targetFile)) {
         echo "Erro ao inserir dados na tabela: " . mysqli_error($conexao);
     }
 } else {
-    echo "Erro ao fazer upload do vídeo." . mysqli_error($conexao);
+    echo "Erro ao fazer upload do arquivo. O arquivo deve ser um PDF.";
 }
 mysqli_close($conexao);
 
