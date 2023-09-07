@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Conteudos </title>
-    <link rel="stylesheet" href="../pagina conteudo/CONTEUDO_P.css">
+    <title> Video aula </title>
+    <link rel="stylesheet" href="BLOCO_VIDEO.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 
+<?php
 
+require("config.php");
+
+$idVideo = $_GET["id"];
+
+$sql = "SELECT * FROM videos WHERE id = $idVideo";
+
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    $video = mysqli_fetch_assoc($resultado);
+
+    $nomeVideo = $video["nome_video"];
+    $descricao = $video["descricao"];
+    $nomeArquivo = $video["nome_arquivo"];
+
+} else {
+    echo "Video não encontrado.";
+}
+
+mysqli_close($conexao);
+
+?>
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -54,7 +77,7 @@
                 </a>
             </li>
         </ul>
-        
+
     </nav>
     
     <div class="menu-principal">
@@ -78,68 +101,48 @@
 
     </div>
 
-    <div class="btn-add">
-        <button> <a href="VIDEO.html"> adicionar video-aula </a> </button>
-    </div>
-
         <div class="config">
             <svg xmlns="http://www.w3.org/2000/svg" width="112" height="79" viewBox="0 0 112 79" fill="none">
                 <path d="M89.6 11.2C89.6 5.0232 84.5768 0 78.4 0H11.2C5.0232 0 0 5.0232 0 11.2V67.2C0 73.3768 5.0232 78.4 11.2 78.4H78.4C84.5768 78.4 89.6 73.3768 89.6 67.2V48.5352L112 67.2V11.2L89.6 29.8648V11.2ZM78.4112 67.2H11.2V11.2H78.4L78.4056 39.1944L78.4 39.2L78.4056 39.2056L78.4112 67.2Z" fill="black"/>
-              </svg>       
-          <h1> Video aulas  </h1>
+              </svg>        
+          <h1> <?php echo $nomeVideo; ?> </h1>
         </div>
-    </div>
 
-    <div class="container">
+        <div class="concluido1"> 
+            <button type="submit"> <a href="VIDEO_PRINCIPAL.html"> voltar </a> </button>
+        </div>
+        
+
+        <div class="container">
+          
+
+        <form action="" method="post">
+
+        <div class="cont1">
             
-        <form action="mostrar_titulo.php" method="post"> 
-            
-        <div class="cont3"> 
-            <div class="escolha-materia">
-                <div class="combo-materia">
-                  <label for=""> escolha a materia: </label>
-                  <br>
-                  <select name="disciplina" id="disciplina">
-                    <option value="Linguagens">Linguagens</option>
-                    <option value="Matemática">Matemática</option>
-                    <option value="Ciências da Natureza">Ciências da Natureza</option>
-                    <option value="Ciências Humanas">Ciências Humanas</option>
-                  </select>
+            <div class="video-view">
+                <div class="video">
+       <?php echo "<video src='uploads/$nomeArquivo' controls></video>" ?>
+                </div>
+            </div>
+
+            <div class="descricao-video">
+                <p> descrição: </p>
+                <input type="text" name="descricao" disabled value="<?php echo $descricao; ?>">
               </div>
-            </div>
-        </div>
-
-        <div class="conteudos-grid">
-            <div> 
-                <h5> </h5>
-             
-            </div>
-
-            <div>
-                <h5>  </h5>
-            </div>
-
-            <div> 
-                <h5>  </h5>
-
-            </div>
-
-            <div>
-                <h5>  </h5>
-
-            </div>
-
-
         </div>
 
 
-        <div class="btn-ver">
-            <button type="submit"> ver </button>
+              
+
+            
+           
+
+       
+        </form>
+
         </div>
-    
-    </form>
-</div>
-
-
+           
+    </div>
 </body>
 </html>

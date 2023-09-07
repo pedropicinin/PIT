@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Video aula </title>
-    <link rel="stylesheet" href="BLOCO_VIDEO.css">
+    <title> Conteudos </title>
+    <link rel="stylesheet" href="../pagina_conteudo/CONTEUDO_P.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
+
     <nav class="menu-lateral">
 
         <div class="btn-expandir">
@@ -52,7 +53,7 @@
                 </a>
             </li>
         </ul>
-
+        
     </nav>
     
     <div class="menu-principal">
@@ -76,51 +77,65 @@
 
     </div>
 
-        <div class="config">
-            <svg xmlns="http://www.w3.org/2000/svg" width="112" height="79" viewBox="0 0 112 79" fill="none">
-                <path d="M89.6 11.2C89.6 5.0232 84.5768 0 78.4 0H11.2C5.0232 0 0 5.0232 0 11.2V67.2C0 73.3768 5.0232 78.4 11.2 78.4H78.4C84.5768 78.4 89.6 73.3768 89.6 67.2V48.5352L112 67.2V11.2L89.6 29.8648V11.2ZM78.4112 67.2H11.2V11.2H78.4L78.4056 39.1944L78.4 39.2L78.4056 39.2056L78.4112 67.2Z" fill="black"/>
-              </svg>        
-          <h1> Titulo </h1>
-        </div>
-
-        <div class="concluido1"> 
-            <button type="submit"> <a href="VIDEO_PRINCIPAL.html"> voltar </a> </button>
-        </div>
-        
-
-        <div class="container">
-          
-
-        <form action="" method="post">
-
-        <div class="cont1">
-            
-            <div class="video-view">
-                <div class="video">
-                </div>
-            </div>
-
-            <div class="descricao-video">
-                <p> descrição: </p>
-                <input type="text" name="descricao" disabled>
-              </div>
-        </div>
-
-
-              
-                <div class="concluido">
-                
-                    <button type="submit"> concluir </button>
-                </div>
-
-            
-           
-
-       
-        </form>
-
-        </div>
-           
+    <div class="btn-add">
+        <button> <a href="VIDEO.html"> adicionar video aula </a> </button>
     </div>
+
+        <div class="config">
+            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="104" viewBox="0 0 90 104" fill="none">
+                <path d="M26.1765 28.5293L63.8235 28.5293M26.1765 44.9999H49.7059M18.4118 66.1764H85V82.6469C85 91.7293 77.6118 99.1175 68.5294 99.1175H21.4706C12.3882 99.1175 5 91.7293 5 82.6469V79.5881C5 72.1999 11.0235 66.1764 18.4118 66.1764Z" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 80.2941L5 28.5294C5 9.70588 9.70588 5 28.5294 5L61.4706 5C80.2941 5 85 9.70588 85 28.5294V75.5882C85 76.247 85 76.9059 84.9529 77.5647" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>         
+          <h1> Video Aulas  </h1>
+        </div>
+    </div>
+
+    <div class="container">
+            
+        <form action="BLOCO_VIDEO.php" method="get"> 
+            
+        
+        <?php
+
+require("config.php");
+
+$disciplina = $_POST["disciplina"];
+
+$sql = "SELECT * FROM videos WHERE materia = '$disciplina'";
+
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    echo "<div class=\"conteudos-grid\">";
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $titulo = $linha["nome_video"];
+        $id = $linha["id"];
+
+        echo "<div >";
+        echo "<h5>" . $titulo . "</h5>";
+        echo "<a href=\"BLOCO_VIDEO.php?id=" . $id . "\" target=\"_blank\">Ver detalhes</a>";
+        
+        
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "Nenhum conteúdo encontrado para a disciplina " . $disciplina;
+}
+
+mysqli_close($conexao);
+?>
+
+
+
+
+
+
+        
+    
+    </form>
+</div>
+
+
 </body>
 </html>
