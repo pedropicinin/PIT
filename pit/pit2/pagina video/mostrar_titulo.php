@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Conteudos </title>
+    <title> Video Aulas </title>
     <link rel="stylesheet" href="../pagina_conteudo/CONTEUDO_P.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
@@ -82,10 +82,9 @@
     </div>
 
         <div class="config">
-            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="104" viewBox="0 0 90 104" fill="none">
-                <path d="M26.1765 28.5293L63.8235 28.5293M26.1765 44.9999H49.7059M18.4118 66.1764H85V82.6469C85 91.7293 77.6118 99.1175 68.5294 99.1175H21.4706C12.3882 99.1175 5 91.7293 5 82.6469V79.5881C5 72.1999 11.0235 66.1764 18.4118 66.1764Z" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5 80.2941L5 28.5294C5 9.70588 9.70588 5 28.5294 5L61.4706 5C80.2941 5 85 9.70588 85 28.5294V75.5882C85 76.247 85 76.9059 84.9529 77.5647" stroke="black" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>         
+        <svg xmlns="http://www.w3.org/2000/svg" width="112" height="79" viewBox="0 0 112 79" fill="none">
+                <path d="M89.6 11.2C89.6 5.0232 84.5768 0 78.4 0H11.2C5.0232 0 0 5.0232 0 11.2V67.2C0 73.3768 5.0232 78.4 11.2 78.4H78.4C84.5768 78.4 89.6 73.3768 89.6 67.2V48.5352L112 67.2V11.2L89.6 29.8648V11.2ZM78.4112 67.2H11.2V11.2H78.4L78.4056 39.1944L78.4 39.2L78.4056 39.2056L78.4112 67.2Z" fill="black"/>
+              </svg>          
           <h1> Video Aulas  </h1>
         </div>
     </div>
