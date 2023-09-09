@@ -17,7 +17,7 @@
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
+                <a href="../pagina usuario/USUARIO_PROFESSOR.php">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>

@@ -8,8 +8,8 @@ $materia = $_POST["materia"];
 $disciplina = $_POST["disciplina"];
 $anexo = $_FILES["anexo"]["name"];
 
-$targetDir = "uploads/";
-$targetFile = $targetDir . basename($_FILES["anexo"]["name"]);
+$targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
+$targetFile = $targetDir . "/" . basename($_FILES["anexo"]["name"]);
 
 if (is_uploaded_file($_FILES["anexo"]["tmp_name"]) && $_FILES["anexo"]["type"] == "application/pdf") {
     move_uploaded_file($_FILES["anexo"]["tmp_name"], $targetFile);

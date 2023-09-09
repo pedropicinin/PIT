@@ -122,7 +122,7 @@ mysqli_close($conexao);
             
             <div class="video-view">
                 <div class="video">
-       <?php echo "<video src='uploads/$nomeArquivo' controls></video>" ?>
+       <?php echo "<video src='/.../.../pit/uploadsVideo/$nomeArquivo' controls></video>" ?>
                 </div>
             </div>
 

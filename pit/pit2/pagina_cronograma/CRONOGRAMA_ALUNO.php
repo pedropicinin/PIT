@@ -35,13 +35,7 @@
 
         <ul>
             <li class="item-menu">
-                <a href="C:\Users\Gustavo\Documents\GitHub\PIT\pit\landingpage\index.html">
-                    <span class="icon"><i class="bi bi-house-door"></i></i></i></span>
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="INICIAL.html">
+                <a href="../pagina_usuario/INICIAL.html">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>

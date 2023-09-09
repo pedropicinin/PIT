@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Conteudos </title>
-    <link rel="stylesheet" href="../pagina_conteudo/CONTEUDO_P.css">
+    <link rel="stylesheet" href="../pagina conteudo/CONTEUDO_P.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-
 
     <nav class="menu-lateral">
 
@@ -79,63 +78,60 @@
     </div>
 
     <div class="btn-add">
-        <button> <a href="VIDEO.html"> adicionar video-aula </a> </button>
+        <button> <a href="PROVAS.HTML"> adicionar prova/simulado </a> </button>
     </div>
 
-        <div class="config">
-            <svg xmlns="http://www.w3.org/2000/svg" width="112" height="79" viewBox="0 0 112 79" fill="none">
-                <path d="M89.6 11.2C89.6 5.0232 84.5768 0 78.4 0H11.2C5.0232 0 0 5.0232 0 11.2V67.2C0 73.3768 5.0232 78.4 11.2 78.4H78.4C84.5768 78.4 89.6 73.3768 89.6 67.2V48.5352L112 67.2V11.2L89.6 29.8648V11.2ZM78.4112 67.2H11.2V11.2H78.4L78.4056 39.1944L78.4 39.2L78.4056 39.2056L78.4112 67.2Z" fill="black"/>
-              </svg>       
-          <h1> Video aulas  </h1>
+    <div class="config">
+            <svg xmlns="http://www.w3.org/2000/svg" width="114" height="104" viewBox="0 0 114 104" fill="none">
+                <path d="M56.5 56.875H75M56.5 75.3749H93.5M93.5 16.4062C93.5 22.1412 88.8288 26.8125 83.0938 26.8125H66.9063C64.0388 26.8125 61.4487 25.6562 59.5525 23.76C57.6562 21.8637 56.5 19.2737 56.5 16.4062C56.5 10.6712 61.1713 6 66.9063 6L83.0938 6C85.9613 6 88.5513 7.15625 90.4475 9.0525C92.3438 10.9487 93.5 13.5387 93.5 16.4062Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M112 34.9062V79.9999C112 93.8749 103.721 98.4999 93.5 98.4999H56.5C46.2787 98.4999 38 93.8749 38 79.9999V34.9062C38 19.875 46.2787 16.4062 56.5 16.4062C56.5 19.2737 57.6562 21.8637 59.5525 23.76C61.4487 25.6562 64.0388 26.8125 66.9063 26.8125H83.0938C88.8288 26.8125 93.5 22.1412 93.5 16.4063C103.721 16.4063 112 19.875 112 34.9062Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>      
+          <h1> Provas  </h1>
         </div>
     </div>
 
     <div class="container">
             
-        <form action="mostrar_titulo.php" method="post"> 
+        <form action="BLOCO_PROVA.php" method="get"> 
             
-        <div class="cont3"> 
-            <div class="escolha-materia">
-                <div class="combo-materia">
-                  <label for=""> escolha a materia: </label>
-                  <br>
-                  <select name="disciplina" id="disciplina">
-                    <option value="Linguagens">Linguagens</option>
-                    <option value="Matemática">Matemática</option>
-                    <option value="Ciências da Natureza">Ciências da Natureza</option>
-                    <option value="Ciências Humanas">Ciências Humanas</option>
-                  </select>
-              </div>
-            </div>
-        </div>
+        
+        <?php
 
-        <div class="conteudos-grid">
-            <div> 
-                <h5> </h5>
-             
-            </div>
+require("config.php");
 
-            <div>
-                <h5>  </h5>
-            </div>
+$ano = $_POST["ano"];
 
-            <div> 
-                <h5>  </h5>
+$sql = "SELECT * FROM provas WHERE ano = '$ano'";
 
-            </div>
+$resultado = mysqli_query($conexao, $sql);
 
-            <div>
-                <h5>  </h5>
+if (mysqli_num_rows($resultado) > 0) {
+    echo "<div class=\"conteudos-grid\">";
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $titulo = $linha["nome_concurso"];
+        $id = $linha["id"];
 
-            </div>
+        echo "<div >";
+        echo "<h5>" . $titulo . "</h5>";
+        echo "<a href=\"BLOCO_PROVA.php?id=" . $id . "\" target=\"_blank\">Ver detalhes</a>";
+        
+        
+        echo "</div>";
+    }
+    echo "</div>";
+} else {
+    echo "Nenhuma prova encontrada para o ano de " . $ano;
+}
+
+mysqli_close($conexao);
+?>
 
 
-        </div>
 
 
-        <div class="btn-ver">
-            <button type="submit"> ver </button>
-        </div>
+
+
+        
     
     </form>
 </div>

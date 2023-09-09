@@ -3,12 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Provas </title>
-    <link rel="stylesheet" href="../pagina conteudo/CONTEUDO_P.css">
+    <title> Prova </title>
+    <link rel="stylesheet" href="BLOCO_PROVA.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 
+<?php
+
+require("config.php");
+
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM provas WHERE id = '$id'";
+
+$resultado = mysqli_query($conexao, $sql);
+
+if (mysqli_num_rows($resultado) > 0) {
+    $linha = mysqli_fetch_assoc($resultado);
+    $nomeC = $linha["nome_concurso"];
+    $ano = $linha["ano"];
+    $gabarito = $linha["nome_arquivo_gabarito"];
+    $prova = $linha["nome_arquivo_prova"];
+
+    
+    $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
+    $targetFileGabarito = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $gabarito);
+
+    $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
+    $targetFileProva = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $prova);
+
+
+if (file_exists($targetFileGabarito)) {
+       // Read the file contents
+       $fileContentsGabarito = file_get_contents($targetFileGabarito);
+    } else {
+       // File does not exist
+       $fileContentsGabarito = "";
+    }
+
+
+    if (file_exists($targetFileProva)) {
+       // Read the file contents
+       $fileContentsProva = file_get_contents($targetFileProva);
+    } else {
+       // File does not exist
+       $fileContentsProva = "";
+    }
+     
+
+
+} else {
+    echo "Nenhum conteúdo encontrado para o ID " . $id;
+}
+
+mysqli_close($conexao);
+?>
 
     <nav class="menu-lateral">
 
@@ -78,82 +128,59 @@
 
     </div>
 
-    <div class="btn-add">
-        <button> <a href="PROVAS.HTML"> adicionar prova/simulado </a> </button>
-    </div>
-
         <div class="config">
             <svg xmlns="http://www.w3.org/2000/svg" width="114" height="104" viewBox="0 0 114 104" fill="none">
                 <path d="M56.5 56.875H75M56.5 75.3749H93.5M93.5 16.4062C93.5 22.1412 88.8288 26.8125 83.0938 26.8125H66.9063C64.0388 26.8125 61.4487 25.6562 59.5525 23.76C57.6562 21.8637 56.5 19.2737 56.5 16.4062C56.5 10.6712 61.1713 6 66.9063 6L83.0938 6C85.9613 6 88.5513 7.15625 90.4475 9.0525C92.3438 10.9487 93.5 13.5387 93.5 16.4062Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M112 34.9062V79.9999C112 93.8749 103.721 98.4999 93.5 98.4999H56.5C46.2787 98.4999 38 93.8749 38 79.9999V34.9062C38 19.875 46.2787 16.4062 56.5 16.4062C56.5 19.2737 57.6562 21.8637 59.5525 23.76C61.4487 25.6562 64.0388 26.8125 66.9063 26.8125H83.0938C88.8288 26.8125 93.5 22.1412 93.5 16.4063C103.721 16.4063 112 19.875 112 34.9062Z" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>      
-          <h1> Provas  </h1>
+              </svg>         
+              
+          <h1><?php echo $nomeC, " - ", $ano; ?> </h1>
         </div>
-    </div>
+
+        <div class="concluido1"> 
+            <button type="submit"> <a href="../pagina_provas/PROVA_P.html"> voltar </a> </button>
+        </div>
+        
 
         <div class="container">
-            
-            <form action="mostrar_titulo.php" method="post"> 
-                
-                <div class="cont3"> 
-                    <div class="escolha-materia">
-                        <div class="combo-materia">
-                          <label for=""> escolha um ano: </label>
-                          <br>
-                          <select class="escolha" name="ano" id="disciplina">
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                            <option value="2013">2013</option>
-                            <option value="2012">2012</option>
-                          </select>
-                      </div>
-                    </div>
-                </div>
+          
 
-                <div class="conteudos-grid">
-                    <div> 
-                        <h5> </h5>
-                     
+        <form action="" method="post">
+        
+
+            <div class="cont2">  
+                    <div class="materia">
+                        <?php echo
+                    "<iframe src='C:/wamp64/www/PIT/pit/uploadsPDF/$prova' width='100%' height='500px'>"
+                    ?>
+                        </iframe>                   
+                     </div>
+
+            </div>
+
+            <div class="cont3"> 
+                
+    
+                <div class="anexos">
+                <p> gabarito: </p>
+                    <div class="baixar">
+                        <?php if (file_exists($fileContentsGabarito)) {
+                            echo "<a href='C:/wamp64/www/PIT/pit/uploadsPDF/$prova' download='$fileContentsGabarito'>Baixar</a>";
+                            }
+                        ?>
+                   
+                    </a>
                     </div>
-        
-                    <div>
-                        <h5>  </h5>
-                    </div>
-        
-                    <div> 
-                        <h5>  </h5>
-        
-                    </div>
-        
-                    <div>
-                        <h5>  </h5>
-        
-                    </div>
-        
-        
                 </div>
-        
-        
-                <div class="btn-ver">
-                    <button type="submit"> ver </button>
-                </div>
-            
-        
+                
+            </div>
+           
+           
+       
         </form>
 
-    
-
-
+        </div>
            
     </div>
-
-
 </body>
 </html>

@@ -58,13 +58,13 @@
             </li>
             <li class="item-menu">
                 <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
-                    <span class="icon"><i class="bi bi-card-text"></i></span>
-                    <span class="txt-link">Conteúdos</span>
+                    <span class="icon"> <i class="bi bi-card-text"> </i> </span>
+                    <span class="txt-link"> Conteúdos </span>
                 </a>
             </li>
             <li class="item-menu">
                 <a href="../pagina_provas/PROVA_P.html">
-                    <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
+                    <span class="icon"><i class="bi bi-file-earmark-text"> </i> </span>
                     <span class="txt-link">Provas</span>
                 </a>
             </li>
@@ -118,7 +118,7 @@
                 <h6> <a href="EMAIL.html"> atualizar email </a></h6>
                 <h5> <?php echo $Email; ?></h5>
                 <h1>telefone</h1>
-                <h6> <a href="..TELEFONE.html"> atualizar telefone </a></h6>
+                <h6> <a href="TELEFONE.html"> atualizar telefone </a></h6>
                 <h5> <?php echo $Telefone; ?></h5>
                 <h1>senha</h1>
                 <h6> <a href="SENHA.html"> atualizar senha </a></h6>

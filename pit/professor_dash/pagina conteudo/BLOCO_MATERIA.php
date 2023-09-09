@@ -26,8 +26,8 @@ if (mysqli_num_rows($resultado) > 0) {
      $materia = $linha["materia"];
      $arquivo = $linha["anexo"];
 
-     $targetDir = "uploads/";
-     $targetFile = realpath(__DIR__ . '/uploads/' . $arquivo);
+     $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
+     $targetFile = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $arquivo);
 
 if (file_exists($targetFile)) {
         // Read the file contents
@@ -56,13 +56,13 @@ mysqli_close($conexao);
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
+                <a href="../pagina usuario/INICIAL_.html">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
+                <a href="pit\professor_dash\pagina conteudo\CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
