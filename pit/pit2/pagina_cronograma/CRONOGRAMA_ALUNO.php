@@ -13,7 +13,7 @@
    function getConteudo($dia) {
     require("config.php");
 
-    $sql = "SELECT conteudo FROM cronograma_estudos WHERE dia_semana = '$dia'";
+    $sql = "SELECT conteudo FROM cronograma_estudos WHERE dia_semana = '$dia' ";
     $resultado = $conexao->query($sql);
 
     if ($resultado->num_rows > 0) {

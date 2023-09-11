@@ -70,7 +70,7 @@
         </div>
 
         <div class="perfil">
-          <a href="USUARIO_PROFESSOR.php"> <div class="circlewhite">
+          <a href="../pagina_usuario/USUARIO_ALUNO.php"> <div class="circlewhite">
               <i class="bi bi-person-circle"></i>            </div>
       <div>
       <h4>  perfil </h4></a>

@@ -74,7 +74,7 @@ mysqli_close($conexao);
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
+                <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
@@ -121,7 +121,7 @@ mysqli_close($conexao);
         </div>
 
         <div class="perfil">
-          <a href="USUARIO_PROFESSOR.php"> <div class="circlewhite">
+          <a href="../pagina_usuario/USUARIO_ALUNO.php"> <div class="circlewhite">
               <i class="bi bi-person-circle"></i>            </div>
       <div>
       <h4>  perfil </h4></a>

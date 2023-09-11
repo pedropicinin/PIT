@@ -33,7 +33,9 @@
                         </div>
                         <div class="input-box">
                             <label for="email">Email</label>
-                            <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                            <input id="email" type="email" name="email" placeholder="Digite seu email" 
+                            pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b
+                            " required>
                         </div>
                         <div class="input-box">
                             <label for="number">Telefone</label>
@@ -45,12 +47,13 @@
                         </div>
                         <div class="input-box">
                             <label for="password">Senha</label>
-                            <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                            <input id="password" type="password" name="password" placeholder="Digite sua senha" 
+                            required onchange="Verifica()">
                         </div>
                         <div class="input-box">
                             <label for="Confirmpassword">Confirme sua Senha</label>
                             <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Confirme sua senha" 
-                            required  onchange="Verifica()">
+                            required>
                         </div>
                         <div class="materia">
                             <label for="">Matéria que deseja ensinar:</label>
@@ -61,7 +64,7 @@
                             <option value="Ciências Humanas">Ciências Humanas</option>
                         </select>
                         </div>
-                        <button type="submit" class="btn-login"> Cadastrar </button>
+                        <button type="submit" class="btn-login" id="btnCad"> Cadastrar </button>
                     </div>
                 </div>
             </div>

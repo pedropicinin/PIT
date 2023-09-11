@@ -56,7 +56,7 @@ mysqli_close($conexao);
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_.html">
+                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>
