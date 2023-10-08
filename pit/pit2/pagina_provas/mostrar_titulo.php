@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
+                <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="btn-add">
-        <button> <a href="PROVAS.HTML"> adicionar prova/simulado </a> </button>
+        <button> <a href="PROVA_P.HTML"> voltar painel </a> </button>
     </div>
 
     <div class="config">

@@ -10,10 +10,10 @@
 <body>
 
     <?php
-   function getConteudo($dia) {
+  function getConteudo($dia) {
     require("config.php");
 
-    $sql = "SELECT conteudo FROM cronograma_estudos WHERE dia_semana = '$dia' ";
+    $sql = "SELECT conteudo FROM cronograma_estudos WHERE dia_semana = '$dia' ORDER BY id DESC LIMIT 5";
     $resultado = $conexao->query($sql);
 
     if ($resultado->num_rows > 0) {
