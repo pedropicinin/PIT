@@ -30,10 +30,12 @@ if ($escolha == "Aluno")
                 $_SESSION['usuario'] = $idUsuario;
         
                 echo "<script> alert('Login realizado com sucesso!');    </script>";
-                header('Location: ../pit2/pagina_usuario/INICIAL.html?id_aluno='.$idUsuario);
+                header('Location: ../pit2/pagina_usuario/INICIAL.php?id_aluno='.$idUsuario);
             }
             else {
                 echo "<script> alert('Email ou senha incorretos.');    </script>";
+                header('Location:  LOGIN.html');
+
             }
             
           }
@@ -41,6 +43,7 @@ if ($escolha == "Aluno")
      } else {
          // Login inválido
          echo "<script> alert('Email ou senha incorretos.');    </script>";
+
      }
      // Fechando a conexão com o banco de dados
      mysqli_close($conexao);
@@ -66,7 +69,7 @@ if ($escolha == "Professor")
                 $_SESSION['usuario'] = $idUsuario;
         
                 echo "<script> alert('Login realizado com sucesso!');    </script>";
-                header('Location: ../professor_dash/pagina usuario/INICIAL_PROFESSOR.html?id_professor='.$idUsuario);
+                header('Location: ../professor_dash/pagina usuario/INICIAL_PROFESSOR.php?id_professor='.$idUsuario);
             }
             else {
                 echo "<script> alert('Email ou senha incorretos.');    </script>";

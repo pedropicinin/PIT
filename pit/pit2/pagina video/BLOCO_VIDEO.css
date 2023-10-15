@@ -297,3 +297,8 @@ border-radius: 1.25rem;
 background: #83A9FF;
 border: none;
 }
+
+.video video {
+  width: 28.3125rem;
+  height: 20rem; 
+}

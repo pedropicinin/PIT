@@ -372,7 +372,28 @@ button {
 }
 
 
-
+.conteudos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas lado a lado */
+    grid-gap: 15px; /* Espaçamento entre as divs */
+    margin-top: 10px;
+    padding-left: 200px;
+    padding-bottom: 50px;
+  }
+  
+  .conteudos-grid > div {
+    width: 200px;
+    height: 200px;
+    color: #407BFF;
+    box-shadow: 5px 5px 10px #575757;
+    border-radius: 40px;
+    padding: 15px;
+    margin: 2em;
+  }
+  
+  .conteudos-grid h3 {
+    
+    margin: 0px 10px;  }
 
 
 
@@ -429,8 +450,9 @@ button {
     border-radius: 30px;
     color: #843700;
     text-align: center;
-    width: 40%;
+    width: 400px;
     margin: 20px;
+margin-left: 50px;    
 }
 .atencao span {
     font-weight: 600;
@@ -443,14 +465,30 @@ button {
 
 
 
+iframe {
+    width: 600px;
+position: absolute;
+top: 250px;
+bottom: 10px;
+left: 50px;
+padding-bottom: 80px;
+}
 
 
 
 
 
+.escanteio {
+    position: absolute;
+right: -500px;
+top: 400px;
+text-align: center;
+}
 
-
-
+.escanteio a {
+    text-decoration: none;
+    color: white;
+}
 
 
 .principal-prof textarea::placeholder{

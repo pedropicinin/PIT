@@ -26,19 +26,23 @@ if (mysqli_num_rows($resultado) > 0) {
      $materia = $linha["materia"];
      $arquivo = $linha["anexo"];
 
-     $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
-     $targetFile = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $arquivo);
+     $targetDir = 'c:\wamp64\www\PIT\pit\uploadsPDF';
 
-if (file_exists($targetFile)) {
+     $targetFile = $targetDir . "/"  . $arquivo;
+
+    if (file_exists($targetFile)) {
         // Read the file contents
-        $fileContents = file_get_contents($targetFile);
-     } else {
-        // File does not exist
-        $fileContents = "";
-     }
+        $file = file_get_contents($targetFile);
 
-     
-
+        // Download the file
+        if (isset($_POST["download"])) {
+            header("Content-type: application/pdf");
+            header("Content-Disposition: attachment; filename=$arquivo");
+            echo $file;
+        }
+    } else {
+        echo "Arquivo não encontrado.";
+    }
 
 } else {
     echo "Nenhum conteúdo encontrado para o ID " . $id;
@@ -150,11 +154,8 @@ mysqli_close($conexao);
                 <p> atividades <br>
                     de fixação: </p>
                     <div class="baixar">
-                        <?php if (file_exists($fileContents)) {
-                            echo "<a href='download.php?id=$id' download='$fileContents'>Baixar</a>";
-                            }
-                        ?>
-                   
+                    <input type="submit" name="download" value="Baixar">
+
                     </a>
                     </div>
                 </div>

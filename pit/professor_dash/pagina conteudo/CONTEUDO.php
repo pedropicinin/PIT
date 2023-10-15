@@ -8,7 +8,7 @@ $materia = $_POST["materia"];
 $disciplina = $_POST["disciplina"];
 $anexo = $_FILES["anexo"]["name"];
 
-$targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
+$targetDir = "c:\wamp64\www\PIT\pit\uploadsPDF";
 $targetFile = $targetDir . "/" . basename($_FILES["anexo"]["name"]);
 
 if (is_uploaded_file($_FILES["anexo"]["tmp_name"]) && $_FILES["anexo"]["type"] == "application/pdf") {
@@ -20,7 +20,7 @@ if (is_uploaded_file($_FILES["anexo"]["tmp_name"]) && $_FILES["anexo"]["type"] =
     if (mysqli_query($conexao, $sql)) {
         echo "<script>
         alert('Conteudo postado.');
-        window.location.href = 'CONTEUDO.html';
+        window.location.href = 'CONTEUDO_PRINCIPAL.html';
         </script>";
     } else {
         echo "Erro ao inserir dados na tabela: " . mysqli_error($conexao);

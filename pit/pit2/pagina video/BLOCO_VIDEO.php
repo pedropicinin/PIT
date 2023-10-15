@@ -26,6 +26,23 @@ if (mysqli_num_rows($resultado) > 0) {
     $descricao = $video["descricao"];
     $nomeArquivo = $video["nome_arquivo"];
 
+    $targetDir = 'http://localhost\\PIT\\pit\\uploadsVideo';
+
+    $targetFileVideo = $targetDir . "\\"  . $nomeArquivo;
+
+    if (file_exists($targetFileVideo)) {
+        // Read the file contents
+        $file = file_get_contents($targetFileVideo);
+
+        // Define the path of the video file
+        $videoPath = "$nomeArquivo";
+
+        // Display the video
+    } else {
+        echo "";
+    }
+
+
 } else {
     echo "Video não encontrado.";
 }
@@ -41,19 +58,19 @@ mysqli_close($conexao);
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
+            <a href="../pagina_usuario/INICIAL.php">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
+            <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina_provas/PROVA_P.html">
+            <a href="../pagina_provas/PROVA_P.html">
                     <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
                     <span class="txt-link">Provas</span>
                 </a>
@@ -71,7 +88,7 @@ mysqli_close($conexao);
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina configuracao/CONFIGURACOES.html">
+            <a href="../pagina_usuario/CONFIGURACOES.html">
                     <span class="icon"><i class="bi bi-gear"></i></span>
                     <span class="txt-link">Configurações</span>
                 </a>
@@ -94,8 +111,8 @@ mysqli_close($conexao);
         </div>
 
         <div class="perfil">
-          <a href="USUARIO_PROFESSOR.php"> <div class="circlewhite">
-              <i class="bi bi-person-circle"></i>            </div>
+        <a href="../pagina_usuario/USUARIO_ALUNO.php"> <div class="circlewhite">
+                          <i class="bi bi-person-circle"></i>            </div>
       <div>
       <h4>  perfil </h4></a>
 
@@ -122,7 +139,8 @@ mysqli_close($conexao);
             
             <div class="video-view">
                 <div class="video">
-       <?php echo "<video src='C:/wamp64/www/PIT/pit/uploadsVideo/$nomeArquivo' controls></video>" ?>
+                <video src="<?php echo $targetFileVideo; ?>" controls>
+            </video>
                 </div>
             </div>
 
@@ -131,17 +149,6 @@ mysqli_close($conexao);
                 <input type="text" name="descricao" disabled value="<?php echo $descricao; ?>">
               </div>
         </div>
-
-
-              
-                <div class="concluido">
-                
-                    <button type="submit"> concluir </button>
-                </div>
-
-            
-           
-
        
         </form>
 

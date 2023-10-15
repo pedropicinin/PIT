@@ -26,19 +26,23 @@ if (mysqli_num_rows($resultado) > 0) {
      $materia = $linha["materia"];
      $arquivo = $linha["anexo"];
 
-     $targetDir = "uploads/";
-     $targetFile = realpath(__DIR__ . '/uploads/' . $arquivo);
+     $targetDir = 'c:\wamp64\www\PIT\pit\uploadsPDF';
 
-if (file_exists($targetFile)) {
+     $targetFile = $targetDir . "/"  . $arquivo;
+
+    if (file_exists($targetFile)) {
         // Read the file contents
-        $fileContents = file_get_contents($targetFile);
-     } else {
-        // File does not exist
-        $fileContents = "";
-     }
+        $file = file_get_contents($targetFile);
 
-     
-
+        // Download the file
+        if (isset($_POST["download"])) {
+            header("Content-type: application/pdf");
+            header("Content-Disposition: attachment; filename=$arquivo");
+            echo $file;
+        }
+    } else {
+        echo "Arquivo não encontrado.";
+    }
 
 } else {
     echo "Nenhum conteúdo encontrado para o ID " . $id;
@@ -56,19 +60,19 @@ mysqli_close($conexao);
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
+            <a href="../pagina_usuario/INICIAL.php">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina conteudo/CONTEUDO_PRINCIPAL.html">
+            <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina_provas/PROVA_P.html">
+            <a href="../pagina_provas/PROVA_P.html">
                     <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
                     <span class="txt-link">Provas</span>
                 </a>
@@ -86,7 +90,7 @@ mysqli_close($conexao);
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina configuracao/CONFIGURACOES.html">
+            <a href="../pagina_usuario/CONFIGURACOES.html">
                     <span class="icon"><i class="bi bi-gear"></i></span>
                     <span class="txt-link">Configurações</span>
                 </a>
@@ -109,8 +113,8 @@ mysqli_close($conexao);
         </div>
 
         <div class="perfil">
-          <a href="USUARIO_PROFESSOR.php"> <div class="circlewhite">
-              <i class="bi bi-person-circle"></i>            </div>
+        <a href="../pagina_usuario/USUARIO_ALUNO.php"> <div class="circlewhite">
+                          <i class="bi bi-person-circle"></i>            </div>
       <div>
       <h4>  perfil </h4></a>
 
@@ -150,20 +154,12 @@ mysqli_close($conexao);
                 <p> atividades <br>
                     de fixação: </p>
                     <div class="baixar">
-                        <?php if (file_exists($fileContents)) {
-                            echo "<a href='download.php?id=$id' download='$fileContents'>Baixar</a>";
-                            }
-                        ?>
-                   
+                    <input type="submit" name="download" value="Baixar">
+
                     </a>
                     </div>
                 </div>
                 
-                <div class="concluido">
-                
-                    <button type="submit"> concluir </button>
-                </div>
-
             </div>
            
 

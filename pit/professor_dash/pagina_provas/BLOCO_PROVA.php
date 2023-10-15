@@ -6,6 +6,7 @@
     <title> Prova </title>
     <link rel="stylesheet" href="BLOCO_PROVA.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 <body>
 
@@ -27,38 +28,37 @@ if (mysqli_num_rows($resultado) > 0) {
     $prova = $linha["nome_arquivo_prova"];
 
     
-    $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
-    $targetFileGabarito = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $gabarito);
-
-    $targetDir = "C:/wamp64/www/PIT/pit/uploadsPDF";
-    $targetFileProva = realpath(__DIR__ . '/C:/wamp64/www/PIT/pit/uploadsPDF/' . $prova);
+    $targetDir = 'c:\wamp64\www\PIT\pit\uploadsPDF';
 
 
-if (file_exists($targetFileGabarito)) {
-       // Read the file contents
-       $fileContentsGabarito = file_get_contents($targetFileGabarito);
+$targetFileProva = $targetDir . "/"  . $prova;
+
+$targetFileG = $targetDir . "/"  . $gabarito;
+
+
+
+
+    if (file_exists($targetFileG)) {
+        // Read the file contents
+        $file = file_get_contents($targetFileG);
+
+        // Download the file
+        if (isset($_POST["download"])) {
+            header("Content-type: application/pdf");
+            header("Content-Disposition: attachment; filename=$gabarito");
+            echo $file;
+        }
     } else {
-       // File does not exist
-       $fileContentsGabarito = "";
+        echo "Arquivo não encontrado.";
     }
-
-
-    if (file_exists($targetFileProva)) {
-       // Read the file contents
-       $fileContentsProva = file_get_contents($targetFileProva);
-    } else {
-       // File does not exist
-       $fileContentsProva = "";
-    }
-     
-
 
 } else {
-    echo "Nenhum conteúdo encontrado para o ID " . $id;
+    echo "Nenhuma prova encontrado para o ID " . $id;
 }
-
 mysqli_close($conexao);
 ?>
+
+
 
     <nav class="menu-lateral">
 
@@ -138,7 +138,7 @@ mysqli_close($conexao);
         </div>
 
         <div class="concluido1"> 
-            <button type="submit"> <a href="../pagina_provas/PROVA_P.html"> voltar </a> </button>
+            <button> <a href="../pagina_provas/PROVA_P.html"> voltar </a> </button>
         </div>
         
 
@@ -150,10 +150,11 @@ mysqli_close($conexao);
 
             <div class="cont2">  
                     <div class="materia">
-                        <?php echo
-                    "<iframe src='C:/wamp64/www/PIT/pit/uploadsPDF/$prova' width='100%' height='500px'>"
-                    ?>
-                        </iframe>                   
+<iframe src="exibir_pdf.php?id=<?php echo $id; ?>" width="100%" height="500px"></iframe>
+
+                    </iframe>
+
+                                    
                      </div>
 
             </div>
@@ -164,10 +165,7 @@ mysqli_close($conexao);
                 <div class="anexos">
                 <p> gabarito: </p>
                     <div class="baixar">
-                        <?php if (file_exists($fileContentsGabarito)) {
-                            echo "<a href='C:/wamp64/www/PIT/pit/uploadsPDF/$prova' download='$fileContentsGabarito'>Baixar</a>";
-                            }
-                        ?>
+                    <input type="submit" name="download" value="Baixar">
                    
                     </a>
                     </div>
@@ -182,5 +180,6 @@ mysqli_close($conexao);
         </div>
            
     </div>
+ 
 </body>
 </html>

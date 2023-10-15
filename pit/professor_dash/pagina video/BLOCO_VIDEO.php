@@ -26,6 +26,23 @@ if (mysqli_num_rows($resultado) > 0) {
     $descricao = $video["descricao"];
     $nomeArquivo = $video["nome_arquivo"];
 
+    $targetDir = 'http://localhost\\PIT\\pit\\uploadsVideo';
+
+    $targetFileVideo = $targetDir . "\\"  . $nomeArquivo;
+
+    if (file_exists($targetFileVideo)) {
+        // Read the file contents
+        $file = file_get_contents($targetFileVideo);
+
+        // Define the path of the video file
+        $videoPath = "$nomeArquivo";
+
+        // Display the video
+    } else {
+        echo "";
+    }
+
+
 } else {
     echo "Video não encontrado.";
 }
@@ -122,7 +139,8 @@ mysqli_close($conexao);
             
             <div class="video-view">
                 <div class="video">
-       <?php echo "<video src='/.../.../pit/uploadsVideo/$nomeArquivo' controls></video>" ?>
+                <video src="<?php echo $targetFileVideo; ?>" controls>
+            </video>
                 </div>
             </div>
 
@@ -131,13 +149,6 @@ mysqli_close($conexao);
                 <input type="text" name="descricao" disabled value="<?php echo $descricao; ?>">
               </div>
         </div>
-
-
-              
-
-            
-           
-
        
         </form>
 

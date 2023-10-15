@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Video Aulas </title>
+    <title> Painel video-aulas | Sem Desculpas </title>
+    <link rel="icon" type="image/svg+xml" href="/pit/assets/favicon.png" />
     <link rel="stylesheet" href="../pagina_conteudo/CONTEUDO_P.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
@@ -17,19 +18,19 @@
 
         <ul>
             <li class="item-menu">
-                <a href="../pagina usuario/INICIAL_PROFESSOR.html">
+            <a href="../pagina_usuario/INICIAL.php">
                     <span class="icon"><i class="bi bi-columns-gap"></i></i></span>
                     <span class="txt-link">Dashboard</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
+            <a href="../pagina_conteudo/CONTEUDO_PRINCIPAL.html">
                     <span class="icon"><i class="bi bi-card-text"></i></span>
                     <span class="txt-link">Conteúdos</span>
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina_provas/PROVA_P.html">
+            <a href="../pagina_provas/PROVA_P.html">
                     <span class="icon"><i class="bi bi-file-earmark-text"></i></span>
                     <span class="txt-link">Provas</span>
                 </a>
@@ -47,7 +48,7 @@
                 </a>
             </li>
             <li class="item-menu">
-                <a href="../pagina configuracao/CONFIGURACOES.html">
+            <a href="../pagina_usuario/CONFIGURACOES.html">
                     <span class="icon"><i class="bi bi-gear"></i></span>
                     <span class="txt-link">Configurações</span>
                 </a>
@@ -70,7 +71,7 @@
         </div>
 
         <div class="perfil">
-          <a href="USUARIO_PROFESSOR.php"> <div class="circlewhite">
+        <a href="../pagina_usuario/USUARIO_ALUNO.php"> <div class="circlewhite">
               <i class="bi bi-person-circle"></i>            </div>
       <div>
       <h4>  perfil </h4></a>
