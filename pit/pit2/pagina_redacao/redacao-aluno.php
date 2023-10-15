@@ -96,7 +96,6 @@ if (isset($_SESSION['usuario'])) {
     echo "Você não está logado.";
 }
 
-echo     $id_aluno = $_SESSION['usuario'];
 
 $sql = "SELECT * FROM red_textos";
 $resultado = mysqli_query($conexao, $sql);
