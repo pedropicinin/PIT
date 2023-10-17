@@ -1,70 +1,38 @@
 <?php
-
 require("config.php");
+session_start();
 
-$emailAntigo = $_POST['emailAntigo'];
+if (isset($_SESSION['usuario'])) {
+    $id_professor = $_SESSION['usuario'];
 
-   session_start();
-    if (isset($_SESSION['usuario'])) {
-        $id_professor = $_SESSION['usuario'];
-        if ($conexao->connect_error) {
-            die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+    $emailAntigo = $_POST['emailAntigo'];
+    $emailNovo = $_POST['emailNovo'];
+
+    if ($conexao->connect_error) {
+        die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
+    }
+
+    // Verifique se o email antigo corresponde ao email no banco de dados
+    $sql = "SELECT * FROM professor WHERE id_professor = $id_professor";
+    $resultado = $conexao->query($sql);
+
+    if (mysqli_num_rows($resultado) == 1) {
+        // O email antigo corresponde ao email no banco de dados
+        $sql = "UPDATE professor SET email = '$emailNovo' WHERE id_professor = $id_professor";
+
+        if (mysqli_query($conexao, $sql)) {
+            echo "<script>alert('Email alterado com sucesso!');</script>";
+            header('Location: USUARIO_PROFESSOR.php?id_professor=' . $id_professor);
+        } else {
+            echo "Erro ao atualizar o email: " . mysqli_error($conexao);
         }
-        
-        $sql = "SELECT * FROM professor WHERE id_professor = $id_professor";
-        $resultado = $conexao->query($sql);
-      }
+    } else {
+        echo "<script>alert('Email antigo inválido.');</script>";
+    }
 
-
-// Verifica se há um registro correspondente no banco de dados
-if (mysqli_num_rows($resultado) == 1) {
-
-  // Login bem-sucedido
- 
- while($row = $resultado->fetch_assoc()) {
-     $idUsuario = $row["id_professor"];
-     $emailBD = $row["email"];
-
-     if ($emailAntigo == $emailBD) 
-     {
-        $id_professor = $idUsuario;
-        $emailNovo = $_POST['emailNovo'];
-
-        $sql = "UPDATE professor SET email = '$emailNovo'
-        WHERE id_professor = $id_professor";
-
-         echo "<script> alert('Email alterado com sucesso!'); </script>";
-
-         header('Location: USUARIO_PROFESSOR.php?id_professor='.$idUsuario);
-
-     
-         
-     }
-     else {
-         echo "<script> alert('Email invalido.');    </script>";
-     }
-     
-   }
-
+    // Fechando a conexão com o banco de dados
+    mysqli_close($conexao);
 } else {
-  // Login inválido
-  echo "<script> alert('senha incorreta.');    </script>";
+    echo "Sessão não iniciada. Verifique a autenticação do usuário.";
 }
-// Fechando a conexão com o banco de dados
-mysqli_close($conexao);
-
-
-
-// if (mysqli_query($conexao, $sql)) {
-    echo "<script>
-    alert('Alteração feita com sucesso.');
-    
-    </script>";
-//} else {
-    echo "Erro ao inserir dados na tabela: " . mysqli_error($conexao);
-//}
-
-// Fechando a conexão com o banco de dados
-//mysqli_close($conexao);
-
 ?>

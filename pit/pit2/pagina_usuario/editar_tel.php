@@ -26,7 +26,7 @@ if (isset($_SESSION['usuario'])) {
 
         if ($telAntigo == $telBD) {
             // O número de telefone antigo corresponde ao número de telefone no banco de dados
-            $id_aluno = $_SESSION['usuario'];
+            $id_aluno = $idUsuario;
             $sql = "UPDATE aluno SET telefone = '$telNovo' WHERE id_aluno = $id_aluno";
 
             if (mysqli_query($conexao, $sql)) {
